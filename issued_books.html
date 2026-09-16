@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issued Books</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>📋 Issued Books</h1>
+
+<p>View all books currently issued to students.</p>
+
+<div class="book-container">
+
+    {% for book in issued_books %}
+
+    <div class="book-card">
+
+        <h2>📖 Book ID: {{ book[1] }}</h2>
+
+        <p>👨‍🎓 Student ID: {{ book[0] }}</p>
+
+        <p>📅 Issue Date: {{ book[2] }}</p>
+        <a href="/return_book/{{ book[1] }}">
+    <button>🔄 Return Book</button>
+</a>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<br>
+
+<a href="/issue_book">
+    <button>➕ Issue Another Book</button>
+</a>
+
+<a href="/">
+    <button>🏠 Back to Home</button>
+</a>
+
+</body>
+</html>

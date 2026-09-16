@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">📚 Library Management System</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/books">Books</a>
+        <a href="/students">Students</a>
+        <a href="/issue_book">Issue Book</a>
+        <a href="/issued_books">Issued Books</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/login">Login</a>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <h1>Welcome to Library Management System</h1>
+    <img src="{{ url_for('static', filename='image/Library.jpg') }}" alt="Library">
+
+    <p>
+        Manage books, students and book issues easily
+        using our library management system.
+    </p>
+
+    <a class="main-button" href="/books">Explore Books</a>
+
+</section>
+
+<footer>
+    <p>Library Management System</p>
+    <p>Developed using Python Flask, HTML, CSS and SQLite</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <p class="page-subtitle">
+    Search and manage all registered students.
+</p>
+
+    <h1>👨‍🎓 Student List</h1>
+    <form method="GET" action="/students">
+    <input type="text" name="search" placeholder="Search student name">
+    <button type="submit">🔍 Search</button>
+</form>
+
+    <div class="student-container">
+
+        {% for student in students %}
+
+        <div class="student-card">
+
+            <h2>👨‍🎓 {{ student[1] }}</h2>
+
+            <p>🆔 Student ID: {{ student[0] }}</p>
+
+            <p>📧 Email: {{ student[2] }}</p>
+
+            <a href="/delete_student/{{ student[0] }}">
+                <button>🗑️ Delete</button>
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <br>
+
+    <a href="/add_student">
+        <button>➕ Add Another Student</button>
+    </a>
+
+    <a href="/">
+        <button>🏠 Back to Home</button>
+    </a>
+
+</body>
+</html>

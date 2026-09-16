@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>👨‍🎓 Student Management</h1>
+
+<a href="/add_student">➕ Add Student</a>
+
+<table>
+    <tr>
+        <th>Student ID</th>
+        <th>Student Name</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+
+    {% for student in students %}
+    <tr>
+        <td>{{ student['id'] }}</td>
+        <td>{{ student['name'] }}</td>
+        <td>{{ student['email'] }}</td>
+        <td>
+            <a href="/delete_student/{{ student['id'] }}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+
+<a href="/">🏠 Back to Home</a>
+
+<footer>
+    <p>Library Management System</p>
+    <p>Developed using Python Flask, HTML, CSS and SQLite</p>
+</footer>
+
+</body>
+</html>

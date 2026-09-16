@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issued Books</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Issued Books</h1>
+
+<table border="1">
+    <tr>
+        <th>Student ID</th>
+        <th>Book ID</th>
+        <th>Issue Date</th>
+    </tr>
+
+    {% for issue in issues %}
+    <tr>
+        <td>{{ issue[0] }}</td>
+        <td>{{ issue[1] }}</td>
+        <td>{{ issue[2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+
+<a href="/">Back to Home</a>
+
+</body>
+</html>

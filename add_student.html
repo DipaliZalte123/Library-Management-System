@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student - Library Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>➕ Add New Student</h1>
+
+<form method="POST">
+
+    <label>Student ID:</label>
+    <input type="number" name="student_id" placeholder="Enter Student ID" required>
+    <br><br>
+
+    <label>Student Name:</label>
+    <input type="text" name="student_name" placeholder="Enter Student Name" required>
+    <br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" placeholder="Enter Email" required>
+    <br><br>
+
+    <button type="submit">Add Student</button>
+
+</form>
+
+<a href="/students">👨‍🎓 View Students</a>
+<a href="/">🏠 Back to Home</a>
+
+<footer>
+    <p>Library Management System</p>
+    <p>Developed using Python Flask, HTML, CSS and SQLite</p>
+</footer>
+
+</body>
+</html>
